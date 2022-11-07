@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "635a0c0b64a6d231228942ae",
+        "service_id": "01",
+        "title": "Islamic Services",
+        "img": "https://www.quranicconnection.tv/wp-content/uploads/2020/06/bigstock-Young-Arabic-Business-Woman-We-152644118.jpg",
+        "price": "40.00",
+        "rating": "5.00",
+        "description": "At Muslimah, we connect our members with professional Muslim Imams and Scholars who will offer advice on Shariah Matters, Islamic Studies and General Counselling. Depending on your situation and inquiries, Muslimah offers various options and solutions to any and all inquires with regards to Islam. During your initial consultation, we will understand what exactly it is you are looking for and connect you to the right mentor. Furthermore, your mentor will hold one-on-one video consultations to ensure that they can help ease your Islamic concerns and help guide you to a solution."
+    },
+    {
+        "_id": "635a0c0b64a6d231228942af",
+        "service_id": "02",
+        "title": "Islamic Finance",
+        "img": "https://i0.wp.com/muslimgirl.com/wp-content/uploads/2022/05/pexels-antoni-shkraba-5206271-scaled.jpg?resize=768%2C512&ssl=1",
+        "price": "20.00",
+        "rating": "5.00",
+        "description": "At Muslimah, we connect our clients with professional Muslim financial scholars/advisors who will offer halal investment solutions and education to help clients reach their financial goals in accordance to Islamic laws. As each person has a different financial situation, Muslimah offers various halal investment strategies that are attuned to meet your short and long- term financial goals based on your risk tolerance. During your initial consultation, we will analyze the information you provide in order for us to connect you with the right mentor. Furthermore, your advisor will hold (online) meetings on a regular basis to ensure that you are on track financially and personally."
+    },
+    {
+        "_id": "635b591a1dafe382a9da8c96",
+        "service_id": "03",
+        "title": "Guide For Halal investing",
+        "img": "https://tradersunion.com/uploads/articles/261/preview.png",
+        "price": "50.00",
+        "rating": "4.98",
+        "description": "Halal investing is about investing in funds or transactions in accordance to shariah (Islamic) laws. The concept of any type of investment is to achieve a return on your equity (ROE) and maximizing returns on your overall investment. However, when taking part in halal investments according to Islamic laws, it prohibits the investment in specific industries, companies, and investment opportunities. At Muslimah, our advisors will assist you in screening and educating you on the various potential investment opportunities so that you continue to make permissible halal business transactions and investments."
+    },
+    {
+        "_id": "635b5afc1dafe382a9da8c98",
+        "service_id": "04",
+        "title": "Islamic Education",
+        "img": "https://islamicnet.com/assets/images/ind2.jpg",
+        "price": "150.00",
+        "rating": "5.00",
+        "description": "At Muslimah, our aim is to educate and expand on the moral principles values Muslims can find in their day-to-day lives. Its encouraged that parents and children acquire the necessary Islamic knowledge, skills, and attitude that can help them strive within society while maintaining a strong relationship with Allah (SWT). Recently, there has been growing concerns with Muslim communities that the religious traditions and values that we have cherished throughout generations are in danger of being lost."
+    },
+    {
+        "_id": "635b5b691dafe382a9da8c99",
+        "service_id": "05",
+        "title": "Teach Your Child Arabic and Quran",
+        "img": "https://focusmalaysia.my/wp-content/uploads/muslim-girl-learning-online.jpg",
+        "price": "30.00",
+        "rating": "5.00",
+        "description": "Start young! Children are much more likely to absorb information and language skills at a young age. Exposing your child to the Arabic language as much as possible is a great way to start establishing communication skills. Teaching your child to read/write and understand Arabic is crucial because it is the language of Islam and the language in which the Quran was revealed to Prophet Muhammad (pbuh). Ways to start teaching your child Arabic can be through a television series, apps, and books. Books such as Qaeda Al-Noorania are great learning books for beginners. This book will help your child slowly learn how to read the Quran. If your child can read the Quran then they can read anything in the Arabic language."
+    },
+    {
+        "_id": "635b5ba51dafe382a9da8c9a",
+        "service_id": "06",
+        "title": "Psychological Counselling",
+        "img": "https://i.ibb.co/KzCG8qr/8888.jpg",
+        "price": "100.00",
+        "rating": "4.95",
+        "description": "At Muslimah, our aim is to educate and expand on the moral principles and values Muslims can find in their day-to-day lives. Its encouraged that parents and children acquire the necessary Islamic knowledge, skills, and attitude that can help them strive within society while maintaining a strong relationship with Allah (SWT). Recently, there has been growing concerns with Muslim communities that the religious traditions and values that we have cherished throughout generations are in danger of being lost."
+    }
+]
