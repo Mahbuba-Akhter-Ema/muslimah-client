@@ -4,9 +4,10 @@ const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch('services.json')
-    .then(res => res.json)
+    .then(res => res.json())
     .then(data => setServices(data));
-  },[])
+  },[]);
+
     return (
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 bg-zinc-900 mt-10 rounded">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -41,7 +42,7 @@ const Services = () => {
             </svg>
             <span className="relative">Connect</span>
           </span>{' '}
-          with Muslim Service Provider.
+          with Muslimh Service Providers.
         </h2>
         <p className="text-base text-white md:text-lg">
         Book video consultations with scholars, practitioners, financial advisors, and educators worldwide.

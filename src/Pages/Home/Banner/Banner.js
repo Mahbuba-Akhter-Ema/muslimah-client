@@ -29,7 +29,7 @@ const Banner = () => {
                             </svg>
                         </a>
                     </div>
-                    <div className="w-full max-w-xl xl:px-8 xl:w-7/12">
+                    <div className="w-full max-w-xl xl:w-7/12">
                         <div className="relative">
                             <img src={bannerGif} alt="" srcset="" />
                         </div>
