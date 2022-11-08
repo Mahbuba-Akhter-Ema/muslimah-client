@@ -1,21 +1,21 @@
 import React from 'react';
 
-const ServicesCard = () => {
+const ServicesCard = ({service}) => {
+  const {img, title, price, rating, description} = service;
     return (
         <div className="flex flex-col transition duration-300 bg-white rounded shadow-sm hover:shadow">
           <div className="relative w-full h-48">
             <img
-              src="https://images.pexels.com/photos/3184305/pexels-photo-3184305.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src={img}
               className="object-cover w-full h-full rounded-t"
               alt="Plan"
             />
           </div>
           <div className="flex flex-col justify-between flex-grow p-8 border border-t-0 rounded-b">
             <div>
-              <div className="text-lg font-semibold">Basic</div>
+              <div className="text-lg font-semibold">{title}</div>
               <p className="text-sm text-gray-900">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                doloremque.
+                {description}
               </p>
               <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-5xl">
                 $12
