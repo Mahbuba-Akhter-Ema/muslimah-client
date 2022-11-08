@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from './logo.png';
 
 const Header = () => {
@@ -61,12 +62,12 @@ const Header = () => {
                     <ul class="flex items-center hidden space-x-8 lg:flex">
                         <li>
                             <a
-                                href="/"
+                                href="/login"
                                 class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
-                                Sign up
+                                LogIn
                             </a>
                         </li>
                     </ul>
@@ -156,24 +157,24 @@ const Header = () => {
                                                 </a>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    href="/about"
                                                     aria-label="About us"
                                                     title="About us"
                                                     class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     About us
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    to="/login"
                                                     class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
                                                     aria-label="Sign up"
                                                     title="Sign up"
                                                 >
-                                                    Sign up
-                                                </a>
+                                                    LogIn
+                                                </Link>
                                             </li>
                                         </ul>
                                     </nav>
