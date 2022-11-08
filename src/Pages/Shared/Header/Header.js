@@ -20,12 +20,12 @@ const Header = () => {
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
                             <a
-                                href="/"
+                                href="/blog"
                                 aria-label="Our product"
                                 title="Our product"
                                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                             >
-                                Product
+                                Blog
                             </a>
                         </li>
                         <li>
