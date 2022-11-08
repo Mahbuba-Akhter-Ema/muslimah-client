@@ -1,5 +1,5 @@
 import React from 'react';
-import bannerGif from './banner-gif (2).gif';
+import bannerGif from '../../../images/banner-gif (2).gif';
 
 const Banner = () => {
     return (

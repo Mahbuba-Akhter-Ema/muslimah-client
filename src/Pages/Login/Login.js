@@ -22,7 +22,7 @@ const Login = () => {
 				<a rel="noopener noreferrer" href="#">Forgot Password?</a>
 			</div>
 		</div>
-		<button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-violet-400 hover:bg-violet-600">Login</button>
+		<button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-teal-400 hover:bg-teal-600">Login</button>
 	</form>
 	<div className="flex items-center pt-4 space-x-1">
 		<div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
