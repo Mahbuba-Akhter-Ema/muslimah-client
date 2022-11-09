@@ -1,19 +1,22 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaDollarSign, FaGrinStars } from 'react-icons/fa';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const SingleServiceCard = () => {
     const product = useLoaderData();
     const { img, title, price, rating, description } = product;
+    
     return (
         <div className='grid grid-cols-1 gap-6 mt-10 lg:grid-cols-2 md:grid-cols-2'>
             <div className="flex flex-col transition duration-300 bg-zinc-900 text-white rounded mt-10">
                 <div className="relative w-full h-48">
-                    <img
-                        src={img}
-                        className="object-cover w-full h-full rounded-t"
-                        alt="Plan"
-                    />
+                    <PhotoProvider>
+                        <PhotoView src={img}>
+                            <img src={img} alt="" />
+                        </PhotoView>
+                    </PhotoProvider>
                 </div>
                 <div className="flex flex-col justify-between flex-grow p-4 border border-t-0 rounded-b">
                     <div>

@@ -8,8 +8,8 @@ const About = () => {
                     width="900"
                     height="315"
                     src="https://www.youtube.com/embed/AciAWDbwyEw"
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                    title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen>
                 </iframe>
             </div>
         </div>

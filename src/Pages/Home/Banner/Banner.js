@@ -31,7 +31,7 @@ const Banner = () => {
                     </div>
                     <div className="w-full max-w-xl xl:w-7/12">
                         <div className="relative">
-                            <img src={bannerGif} alt="" srcset="" />
+                            <img src={bannerGif} alt="" srcSet="" />
                         </div>
                     </div>
                 </div>
