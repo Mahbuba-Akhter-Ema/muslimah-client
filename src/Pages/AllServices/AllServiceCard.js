@@ -11,7 +11,7 @@ const AllServiceCard = ({ services }) => {
       <div className="relative w-full h-48">
         <PhotoProvider>
           <PhotoView src={img}>
-            <img src={img} alt="" />
+            <img className='w-full' src={img} alt="" />
           </PhotoView>
         </PhotoProvider>
       </div>

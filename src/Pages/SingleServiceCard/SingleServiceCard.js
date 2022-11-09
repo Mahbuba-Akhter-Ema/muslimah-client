@@ -43,9 +43,9 @@ const SingleServiceCard = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        toast.success("Successfully toasted!");
-
+        if(data.acknowledged){
+          toast.success("Successfully toasted!");
+        }
         form.reset();
       })
       .catch((err) => {
