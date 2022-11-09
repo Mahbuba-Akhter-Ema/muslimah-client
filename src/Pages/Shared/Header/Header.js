@@ -8,35 +8,35 @@ const Header = () => {
         <div className="bg-black rounded relative z-40">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
                 <div className="relative flex items-center justify-between">
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
                         aria-label="Company"
                         title="Company"
                         className="inline-flex items-center"
                     >
                         <img className='w-12 bg-white rounded-lg' src={logo} alt="" srcSet="" />
 
-                    </a>
+                    </Link>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                             >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/blog"
+                            <Link
+                                to="/blog"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                             >
                                 Blog
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a
@@ -61,14 +61,14 @@ const Header = () => {
                     </ul>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/login"
+                            <Link
+                                to="/login"
                                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
                                 LogIn
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                     <div className="lg:hidden">
@@ -98,15 +98,15 @@ const Header = () => {
                                 <div className="p-5 bg-white border rounded shadow-sm">
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
-                                            <a
-                                                href="/"
+                                            <Link
+                                                to="/"
                                                 aria-label="Company"
                                                 title="Company"
                                                 className="inline-flex items-center"
                                             >
                                                 <img className='w-12 rounded-lg bg-white' src={logo} alt="" srcSet="" />
 
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div>
                                             <button
@@ -127,34 +127,34 @@ const Header = () => {
                                     <nav>
                                         <ul className="space-y-4">
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    to="/"
                                                     aria-label="Home"
                                                     title="Home"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     Home
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="/blog"
+                                                <Link
+                                                    to="/blog"
                                                     aria-label="Blog"
                                                     title="Blog"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     Blog
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    to="/"
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     Pricing
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <Link
