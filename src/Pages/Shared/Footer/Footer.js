@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer footer-center bg-black p-10 text-white rounded mt-10">
             <div className="grid grid-flow-col gap-4">
                 <a href="/" className="link link-hover">About us</a>
-                <a href="/" className="link link-hover">Contact</a>
+                <a href="/home" className="link link-hover">Home</a>
                 <a href="/blog" className="link link-hover">Blog</a>
                 <a target="_blank" href="https://www.youtube.com/channel/UCrKogvG3W1f9fx7BuJgl-yQ" className="link link-hover">YouTube</a>
             </div>

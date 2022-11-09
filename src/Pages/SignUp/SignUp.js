@@ -46,7 +46,7 @@ const SignUp = () => {
 					<form onSubmit={handleSignUp} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
 						<div className="space-y-1 text-sm">
 							<label for="username" className="block dark:text-gray-400">Username</label>
-							<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-700 text-gray-100 focus:border-violet-400" />
+							<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-700 text-gray-100 focus:border-violet-400" required/>
 						</div>
 						<div className="space-y-1 text-sm">
 							<label for="username" className="block dark:text-gray-400">Email</label>

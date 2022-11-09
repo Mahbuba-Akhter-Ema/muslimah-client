@@ -1,12 +1,67 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { FaDollarSign, FaGrinStars } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import toast from 'react-hot-toast';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import ShowReview from '../ShowReview/ShowReview';
 
 const SingleServiceCard = () => {
+    const {user} = useContext(AuthContext);
     const product = useLoaderData();
-    const { img, title, price, rating, description } = product;
+    const {_id ,img, title, price, rating, description } = product;
+
+    const navigate = useNavigate();
+
+    // Riviews.........send post
+  function ReviewHandler(event) {
+    event.preventDefault();
+    if (!user) {
+      toast.error("Please Login");
+      navigate("/login");
+      return;
+    }
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const massage = form.massage.value;
+    const review = {
+      serviceID: _id,
+      photo: user.photoURL,
+      name,
+      email,
+      massage: massage,
+    };
+    //  post data
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Successfully toasted!");
+
+        form.reset();
+      })
+      .catch((err) => {
+        toast.error(err.massage);
+      });
+    // ...........
+  }
+
+  // get data .......
+
+  const [review, setReview] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/review?serviceID=${_id}`)
+      .then((res) => res.json())
+      .then((data) => setReview(data));
+  }, [_id]);
     
     return (
         <div className='grid grid-cols-1 gap-6 mt-10 lg:grid-cols-2 md:grid-cols-2'>
@@ -37,6 +92,42 @@ const SingleServiceCard = () => {
                     </div>
                 </div>
             </div>
+            <div className=" mt-8 bg-zinc-900 rounded">
+        <form onSubmit={ReviewHandler} className="sendReview">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            defaultValue={user?.displayName}
+            className="input input-bordered input-md w-11/12 m-4"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            defaultValue={user?.email}
+            placeholder="Your Email"
+            className="input input-bordered input-md w-11/12 m-4"
+            required
+          />
+          <input
+            type="text"
+            name="massage"
+            placeholder="Your Massage "
+            className="input input-bordered input-md w-11/12 m-4"
+            required
+          />
+          <div className="flex justify-center mt-3">
+            <button className="btn btn-primary w-4/5">Submit</button>
+          </div>
+        </form>
+
+        <div className="view">
+          <div className="">
+            {review.map((rv) => <ShowReview key={rv._id} rv={rv}></ShowReview>)}
+          </div>
+        </div>
+      </div>
         </div>
     );
 };
