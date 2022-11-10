@@ -34,7 +34,7 @@ const SingleServiceCard = () => {
       massage: massage,
     };
     //  post data
-    fetch("http://localhost:5000/review", {
+    fetch("https://muslimah-server.vercel.app/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const SingleServiceCard = () => {
 
   const [review, setReview] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/review?serviceID=${_id}`)
+    fetch(`https://muslimah-server.vercel.app/review?serviceID=${_id}`)
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, [_id]);
@@ -74,7 +74,7 @@ const SingleServiceCard = () => {
                     </PhotoProvider>
                 </div>
                 <div className="flex flex-col justify-between flex-grow p-4 border border-t-0 rounded-b">
-                    <div>
+                    <div className='mt-56'>
                         <div className="text-lg font-bold">{title}</div>
                         {
                             <p className="text-sm text-white">

@@ -1,6 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-import addService from '../../images/addService.gif';
+import addService from '../../images/add-to-cart.gif';
 
 const AddService = () => {
     const submitHandle = (event) => {
@@ -13,7 +13,7 @@ const AddService = () => {
         const description = form.description.value;
         const product = { title, price, rating, img, description };
         // console.log(title, rating, photo, description, price);
-        fetch("http://localhost:5000/service", {
+        fetch("https://muslimah-server.vercel.app/service", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -30,13 +30,13 @@ const AddService = () => {
             .catch((err) => console.log(err));
     };
     return (
-        <div className='grid grid-cols-1 bg-base-300 mt-10 lg:grid-cols-2 md:grid-cols-2 rounded-lg'>
-            <div>
+        <div className='grid grid-cols-1 bg-zinc-900 mt-10 lg:grid-cols-2 md:grid-cols-2 rounded-lg'>
+            <div className='m-2'>
                 <img alt='' src={addService}></img>
             </div>
             <div>
                 <form onSubmit={submitHandle} className="">
-                    <h1 className="text-primary text-3xl my-3 font-semibold">
+                    <h1 className="text-teal-400 text-3xl my-3 font-semibold">
                         Add Product
                     </h1>
                     <input

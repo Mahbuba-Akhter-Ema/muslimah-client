@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         {
             path: '/allservices/:id',
             element: <SingleServiceCard></SingleServiceCard>,
-            loader: ({params}) => fetch(`http://localhost:5000/allService/${params.id}`)
+            loader: ({params}) => fetch(`https://muslimah-server.vercel.app/allService/${params.id}`)
         },
         {
             path:'/blog',

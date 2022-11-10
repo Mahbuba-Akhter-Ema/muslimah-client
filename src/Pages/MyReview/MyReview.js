@@ -7,7 +7,7 @@ const MyReview = () => {
     const[myreview, setMyReview]= useState([])
 
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/myReview?email=${user?.email}`)
+    //     fetch(`https://muslimah-server.vercel.app/myReview?email=${user?.email}`)
     //     .then(res=>res.json())
     //     .then(data=> setMyReview(data))
     // },[user.email])
@@ -15,7 +15,7 @@ const MyReview = () => {
     const deleteHandle = datas=>{
         const agree = window.confirm(`are you sure ${datas.name}`)
         if(agree){
-            fetch(`http://localhost:5000/delete/${datas._id}`, {
+            fetch(`https://muslimah-server.vercel.app/delete/${datas._id}`, {
                 method:'DELETE'
             })
             .then(res=>res.json())

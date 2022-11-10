@@ -8,7 +8,7 @@ const AllServiceCard = ({ services }) => {
   const { _id, img, title, price, rating, description } = services;
   return (
     <div className="flex flex-col transition duration-300 bg-zinc-900 text-white rounded shadow-sm hover:shadow">
-      <div className="relative w-full h-48">
+      <div className="relative h-48">
         <PhotoProvider>
           <PhotoView src={img}>
             <img className='w-full' src={img} alt="" />
@@ -16,7 +16,7 @@ const AllServiceCard = ({ services }) => {
         </PhotoProvider>
       </div>
       <div className="flex flex-col justify-between flex-grow p-4 m-4 shadow-2xl">
-        <div>
+        <div className='lg:mt-16 p-4 sm:mt-16'>
           <div className="text-lg font-bold">{title}</div>
           {
             <p className="text-sm text-white">
