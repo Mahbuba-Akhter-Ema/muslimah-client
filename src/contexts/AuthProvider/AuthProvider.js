@@ -8,21 +8,25 @@ const auth = getAuth(app);
 const AuthProvider = ({children}) => {
 
     const [user, setUser]=useState('');
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     const logIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
     const providerLogin = (provider) => {
+        setLoading(true);
         return signInWithPopup(auth, provider);
     };
 
     const logOutUser=()=>{
+        setLoading(true);
         return signOut(auth)
     };
 
@@ -30,6 +34,7 @@ const AuthProvider = ({children}) => {
        const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log(currentUser);
             setUser(currentUser);
+            setLoading(true);
         });
         return () => {
             unsubscribe();

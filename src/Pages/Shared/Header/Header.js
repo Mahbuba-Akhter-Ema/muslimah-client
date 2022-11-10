@@ -60,14 +60,14 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/myreview"
                                 aria-label="About us"
                                 title="About us"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
                             >
-                                About us
-                            </a>
+                                My Review
+                            </Link>
                         </li>
                     </ul>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -170,7 +170,7 @@ const Header = () => {
                                                     to="/blog"
                                                     aria-label="Blog"
                                                     title="Blog"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                                                 >
                                                     Blog
                                                 </Link>
@@ -180,19 +180,19 @@ const Header = () => {
                                                     href="/addservice"
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
-                                                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-400"
                                                 >
                                                     Add Service
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link
-                                                    href="/about"
+                                                    to="/myreview"
                                                     aria-label="About us"
                                                     title="About us"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    About us
+                                                    My Review
                                                 </Link>
                                             </li>
                                             <li>

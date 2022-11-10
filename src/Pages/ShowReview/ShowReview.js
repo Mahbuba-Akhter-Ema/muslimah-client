@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ShowReview = ({rv}) => {
+    console.log(rv);
     return (
         <div className="card w-full bg-gray-300 text-black shadow-xl my-4">
             <div className="card-body  text-center">
@@ -8,7 +9,7 @@ const ShowReview = ({rv}) => {
                     <h3 className='text-2xl font-bold  '>{rv?.name}</h3>
                     <img className='h-15 w-10 rounded-full' alt='' src={rv?.photo} />
                 </div>
-                <p>{rv?.massage}</p>
+                <p>{rv?.message}</p>
             </div>
         </div>
     );

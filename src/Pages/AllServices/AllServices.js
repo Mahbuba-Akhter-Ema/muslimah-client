@@ -4,7 +4,7 @@ import AllServiceCard from './AllServiceCard';
 const AllServices = () => {
     const [allServices, setallServices] = useState([]);
   useEffect(() => {
-    fetch('https://muslimah-server.vercel.app/allService')
+    fetch('http://localhost:5000/allService')
     .then(res => res.json())
     .then(data => setallServices(data));
   },[]);

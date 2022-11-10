@@ -15,8 +15,8 @@ const AllServiceCard = ({ services }) => {
           </PhotoView>
         </PhotoProvider>
       </div>
-      <div className="flex flex-col justify-between flex-grow p-4 m-4 shadow-2xl">
-        <div className='lg:mt-16 p-4 sm:mt-16'>
+      <div className="flex flex-col justify-between flex-grow m-4 shadow-2xl">
+        <div className='lg:mt-16 p-12 lg:p-3'>
           <div className="text-lg font-bold">{title}</div>
           {
             <p className="text-sm text-white">
