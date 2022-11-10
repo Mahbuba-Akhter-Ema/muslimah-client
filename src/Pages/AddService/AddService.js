@@ -1,8 +1,11 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../Hook/UseTitle';
 import addService from '../../images/add-to-cart.gif';
 
 const AddService = () => {
+    useTitle('Add Service');
+    
     const submitHandle = (event) => {
         event.preventDefault();
         const form = event.target;

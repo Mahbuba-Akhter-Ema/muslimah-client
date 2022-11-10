@@ -2,9 +2,11 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hook/UseTitle';
 import logo from '../../images/login.gif';
 
 const Login = () => {
+	useTitle('Login');
 	const location = useLocation();
 	const navigate = useNavigate();
 	
@@ -18,7 +20,7 @@ const Login = () => {
 		const form = event.target;
 		const email = form.email.value;
 		const password = form.password.value;
-
+		console.log(email, password);
 		logIn(email, password)
 		.then(result => {
 			const user = result.user;

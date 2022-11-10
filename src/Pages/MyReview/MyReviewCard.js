@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hook/UseTitle';
 
 const MyReviewCard = ({ review, deleteHandle }) => {
+    useTitle('MyReview');
     const {loading} = useContext(AuthContext);
 
     if(!loading) {
@@ -10,7 +12,7 @@ const MyReviewCard = ({ review, deleteHandle }) => {
             Loading.....
         </div>
     }
-    console.log(review)
+    // console.log(review)
     return (
         <div className="card w-4/5 mx-auto my-4 lg:my-10 bg-gray-300 text-black ">
             <div className="card-body items-center">

@@ -1,13 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hook/UseTitle';
 import MyReviewCard from './MyReviewCard';
 
 const MyReview = () => {
+    useTitle('My Reviews');
     const { user } = useContext(AuthContext);
     const [myreview, setMyReview] = useState([])
 
     useEffect(() => {
-        fetch(`https://muslimah-server.vercel.app/myReview?email=${user?.email}`)
+        fetch(`https://muslimah-server.vercel.app/myReview?email=${user?.email}`, {
+            headers:{
+                authorization:`Barer ${localStorage.getItem("token")}`
+            }
+        })
             .then(res => res.json())
             .then(data => setMyReview(data))
     }, [user.email])
@@ -21,7 +27,7 @@ const MyReview = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.acknowledged) {
-                        const remaining = myreview.filter(review => review._id !== datas._id)
+                        const remaining = myreview?.filter(review => review?._id !== datas?._id)
                         setMyReview(remaining)
 
                     }
@@ -35,10 +41,10 @@ const MyReview = () => {
     return (
         <div>
             {
-                myreview.length === 0 && <p className='text-center mt-28 md:mt-96 text-4xl text-green-600'>No reviews were added</p>
+                myreview?.length === 0 && <p className='text-center mt-28 md:mt-96 text-4xl text-green-600'>No reviews were added</p>
             }
             {
-                myreview.map(review => <MyReviewCard
+                myreview?.map(review => <MyReviewCard
                     deleteHandle={deleteHandle}
                     key={review._id}
                     review={review}

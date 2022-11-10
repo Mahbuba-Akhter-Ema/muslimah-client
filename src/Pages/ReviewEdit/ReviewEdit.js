@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hook/UseTitle';
 
 const ReviewEdit = () => {
+    useTitle('Review');
     const editData = useLoaderData()
     const [newData, setNewData] = useState([])
 

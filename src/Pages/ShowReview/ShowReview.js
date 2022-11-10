@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ShowReview = ({rv}) => {
-    console.log(rv);
+    // console.log(rv);
     return (
         <div className="card w-full bg-gray-300 text-black shadow-xl my-4">
             <div className="card-body  text-center">

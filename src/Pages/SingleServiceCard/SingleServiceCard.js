@@ -6,8 +6,10 @@ import 'react-photo-view/dist/react-photo-view.css';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ShowReview from '../ShowReview/ShowReview';
+import useTitle from '../../Hook/UseTitle';
 
 const SingleServiceCard = () => {
+  useTitle('Single Services');
   const { user } = useContext(AuthContext);
   const product = useLoaderData();
   const { _id, img, title, price, rating, description } = product;
@@ -47,7 +49,7 @@ const SingleServiceCard = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          toast.success("Successfully toasted!");
+          toast.success("Successfully added!");
         }
         form.reset();
       })

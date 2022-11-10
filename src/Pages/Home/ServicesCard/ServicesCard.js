@@ -3,8 +3,10 @@ import { FaDollarSign, FaGrinStars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../../Hook/UseTitle';
 
 const ServicesCard = ({ service }) => {
+  useTitle('Service Cards');
   const { _id, img, title, price, rating, description } = service;
   return (
     <div className="flex flex-col transition duration-300 bg-white rounded shadow-sm hover:shadow">

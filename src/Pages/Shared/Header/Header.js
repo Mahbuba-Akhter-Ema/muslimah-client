@@ -182,46 +182,62 @@ const Header = () => {
                                                     Blog
                                                 </Link>
                                             </li>
-                                            <li>
-                                                <Link
-                                                    href="/addservice"
-                                                    aria-label="Product pricing"
-                                                    title="Product pricing"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-400"
-                                                >
-                                                    Add Service
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to="/myreview"
-                                                    aria-label="About us"
-                                                    title="About us"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    My Review
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to="/login"
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
-                                                    aria-label="LogIn"
-                                                    title="LogIn"
-                                                >
-                                                    LogIn
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to="/signup"
-                                                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
-                                                    aria-label="LogIn"
-                                                    title="LogIn"
-                                                >
-                                                    Sign Up
-                                                </Link>
-                                            </li>
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                to="/addservice"
+                                                                aria-label="Product pricing"
+                                                                title="Product pricing"
+                                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-400"
+                                                            >
+                                                                Add Service
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                to="/myreview"
+                                                                aria-label="About us"
+                                                                title="About us"
+                                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-400"
+                                                            >
+                                                                My Review
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                                    :
+                                                    <></>
+                                            }
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                onClick={handleLogOut}
+                                                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
+                                                                aria-label="Sign up"
+                                                                title="Sign up"
+                                                            >
+                                                                Log Out
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <li>
+                                                            <Link
+                                                                to="/login"
+                                                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal-400 hover:bg-teal-600 focus:shadow-outline focus:outline-none"
+                                                                aria-label="Sign up"
+                                                                title="Sign up"
+                                                            >
+                                                                LogIn
+                                                            </Link>
+                                                        </li>
+                                                    </>
+                                            }
+
                                         </ul>
                                     </nav>
                                 </div>

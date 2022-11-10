@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ServicesCard from '../ServicesCard/ServicesCard';
 
 const Services = () => {
+
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch('https://muslimah-server.vercel.app/services')
