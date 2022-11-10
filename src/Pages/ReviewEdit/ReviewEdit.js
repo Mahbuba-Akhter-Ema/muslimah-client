@@ -11,7 +11,7 @@ const ReviewEdit = () => {
         console.log(newData)
 
 
-        fetch(`http://localhost:5000/myReview/${editData?._id}`, {
+        fetch(`https://muslimah-server.vercel.app/myReview/${editData?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

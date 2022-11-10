@@ -49,26 +49,33 @@ const Header = () => {
                                 Blog
                             </Link>
                         </li>
-                        <li>
-                            <Link
-                                to="/addservice"
-                                aria-label="Product pricing"
-                                title="Product pricing"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-                            >
-                                Add Service
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/myreview"
-                                aria-label="About us"
-                                title="About us"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
-                            >
-                                My Review
-                            </Link>
-                        </li>
+                        {
+                            user?.uid ?
+                                <>
+                                    <li>
+                                        <Link
+                                            to="/addservice"
+                                            aria-label="Product pricing"
+                                            title="Product pricing"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                                        >
+                                            Add Service
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/myreview"
+                                            aria-label="About us"
+                                            title="About us"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-400"
+                                        >
+                                            My Review
+                                        </Link>
+                                    </li>
+                                </>
+                                :
+                                <></>
+                        }
                     </ul>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         {

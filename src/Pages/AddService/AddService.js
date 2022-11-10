@@ -13,7 +13,7 @@ const AddService = () => {
         const description = form.description.value;
         const product = { title, price, rating, img, description };
         // console.log(title, rating, photo, description, price);
-        fetch("http://localhost:5000/service", {
+        fetch("https://muslimah-server.vercel.app/service", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

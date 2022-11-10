@@ -10,6 +10,7 @@ import ReviewEdit from "../../Pages/ReviewEdit/ReviewEdit";
 import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
 import SignUp from "../../Pages/SignUp/SignUp";
 import SingleServiceCard from "../../Pages/SingleServiceCard/SingleServiceCard";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
         {
             path: '/allservices/:id',
             element: <SingleServiceCard></SingleServiceCard>,
-            loader: ({params}) => fetch(`http://localhost:5000/allService/${params.id}`)
+            loader: ({params}) => fetch(`https://muslimah-server.vercel.app/allService/${params.id}`)
         },
         {
             path:'/blog',
@@ -44,16 +45,16 @@ const router = createBrowserRouter([
         },
         {
             path: '/myreview',
-            element: <MyReview></MyReview>
+            element: <PrivateRoutes><MyReview></MyReview></PrivateRoutes>
         },
         {
             path: '/addservice',
-            element: <AddService></AddService>
+            element: <PrivateRoutes><AddService></AddService></PrivateRoutes>
         },
         {
             path: '/update/:id',
             element: <ReviewEdit></ReviewEdit>,
-            loader: ({params}) => fetch(`http://localhost:5000/myreview/${params.id}`)
+            loader: ({params}) => fetch(`https://muslimah-server.vercel.app/myreview/${params.id}`)
         }
         ]
     }

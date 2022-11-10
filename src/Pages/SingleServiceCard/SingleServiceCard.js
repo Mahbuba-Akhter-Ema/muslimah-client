@@ -37,7 +37,7 @@ const SingleServiceCard = () => {
       message,
     };
     //  post data
-    fetch("http://localhost:5000/review", {
+    fetch("https://muslimah-server.vercel.app/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const SingleServiceCard = () => {
 
   const [review, setReview] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/review?serviceID=${_id}`)
+    fetch(`https://muslimah-server.vercel.app/review?serviceID=${_id}`)
       .then((res) => res.json())
       .then((data) => setReview(data));
   }, [_id]);

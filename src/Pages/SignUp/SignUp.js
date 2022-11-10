@@ -1,42 +1,79 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import signUp from '../../images/signup.gif';
 
 const SignUp = () => {
-    const {createUser, providerLogin} = useContext(AuthContext);
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	const from = location.state?.from?.pathname || "/";
+
+	const { createUser, providerLogin } = useContext(AuthContext);
 	const googleProvider = new GoogleAuthProvider();
 
-    const handleSignUp = event => {
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
+	const handleSignUp = event => {
+		event.preventDefault();
+		const form = event.target;
+		const email = form.email.value;
+		const password = form.password.value;
 
-        createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    };
+		createUser(email, password)
+			.then(result => {
+				const user = result.user;
+				const currentUser = {
+					email: user.email
+				}
+
+				fetch('https://muslimah-server.vercel.app/jwt', {
+					method: "POST",
+					headers: {
+						'content-type': 'application/json'
+					},
+					body: JSON.stringify(currentUser)
+				})
+					.then(res => res.json())
+					.then(data => {
+						localStorage.setItem("token", data.token)
+					})
+				navigate(from, { replace: true });
+				console.log(user);
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	};
 
 	const handleGoogleSignIn = () => {
 		providerLogin(googleProvider)
-		.then(result => {
-			const user = result.user;
-			console.log(user);
-		})
-		.catch(error => 
-			console.error(error)
-		);
+			.then(result => {
+				const user = result.user;
+				const currentUser = {
+					email: user.email
+				}
+
+				fetch('https://muslimah-server.vercel.app/jwt', {
+					method: "POST",
+					headers: {
+						'content-type': 'application/json'
+					},
+					body: JSON.stringify(currentUser)
+				})
+					.then(res => res.json())
+					.then(data => {
+						localStorage.setItem("token", data.token)
+					})
+				navigate(from, { replace: true });
+				console.log(user);
+			})
+			.catch(error =>
+				console.error(error)
+			);
 	}
 
-    return (
-        <div className="hero min-h-screen bg-base-200 mt-10 rounded">
+	return (
+		<div className="hero min-h-screen bg-base-200 mt-10 rounded">
 			<div className="hero-content flex-col lg:flex-row-reverse">
 				<div className="text-center lg:text-left">
 					<img src={signUp} alt="" srcSet="" />
@@ -46,7 +83,7 @@ const SignUp = () => {
 					<form onSubmit={handleSignUp} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
 						<div className="space-y-1 text-sm">
 							<label for="username" className="block dark:text-gray-400">Username</label>
-							<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-700 text-gray-100 focus:border-violet-400" required/>
+							<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-700 text-gray-100 focus:border-violet-400" required />
 						</div>
 						<div className="space-y-1 text-sm">
 							<label for="username" className="block dark:text-gray-400">Email</label>
@@ -54,7 +91,7 @@ const SignUp = () => {
 						</div>
 						<div className="space-y-1 text-sm">
 							<label for="password" className="block text-gray-400">Password</label>
-							<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" required/>
+							<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" required />
 						</div>
 						<button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-teal-400 hover:bg-teal-600">Sign Up</button>
 					</form>
@@ -78,7 +115,7 @@ const SignUp = () => {
 				</div>
 			</div>
 		</div>
-    );
+	);
 };
 
 export default SignUp;
