@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 const useTitle = title =>{
     useEffect(()=>{
-        document.title = `${title} -titlechanges`;
+        document.title = `${title} -Muslimah`;
     },[title])
 }
 
