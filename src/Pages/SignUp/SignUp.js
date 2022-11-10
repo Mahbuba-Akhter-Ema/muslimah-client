@@ -12,8 +12,14 @@ const SignUp = () => {
 
 	const from = location.state?.from?.pathname || "/";
 
-	const { createUser, providerLogin } = useContext(AuthContext);
+	const { createUser, providerLogin, loading } = useContext(AuthContext);
 	const googleProvider = new GoogleAuthProvider();
+
+	if(!loading) {
+        return <div>
+            Loading.....
+        </div>
+    }
 
 	const handleSignUp = event => {
 		event.preventDefault();
@@ -84,15 +90,15 @@ const SignUp = () => {
 					<h1 className="text-2xl font-bold text-center">Sign Up</h1>
 					<form onSubmit={handleSignUp} action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
 						<div className="space-y-1 text-sm">
-							<label for="username" className="block dark:text-gray-400">Username</label>
+							<label htmlFor="username" className="block dark:text-gray-400">Username</label>
 							<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-700 text-gray-100 focus:border-violet-400" required />
 						</div>
 						<div className="space-y-1 text-sm">
-							<label for="username" className="block dark:text-gray-400">Email</label>
+							<label htmlFor="username" className="block dark:text-gray-400">Email</label>
 							<input type="text" name="email" id="username" placeholder="Your Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-700 text-gray-100 focus:border-violet-400" required />
 						</div>
 						<div className="space-y-1 text-sm">
-							<label for="password" className="block text-gray-400">Password</label>
+							<label htmlFor="password" className="block text-gray-400">Password</label>
 							<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" required />
 						</div>
 						<button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-teal-400 hover:bg-teal-600">Sign Up</button>
